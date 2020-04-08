@@ -1,8 +1,6 @@
 package com.example.demo.web;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.validation.Valid;
 
@@ -29,11 +27,7 @@ public class ProjectController {
 	@PostMapping("")
 	public ResponseEntity<?> createNewProject(@Valid @RequestBody Project project,BindingResult result){
 		if(result.hasErrors()) {
-			Map<String, String> errorMap = new HashMap<>();
-			for(FieldError fieldError : result.getFieldErrors()) {
-				errorMap.put(fieldError.getField(), fieldError.getDefaultMessage());
-			}
-			return new ResponseEntity<Map<String,String>>(errorMap,HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<List<FieldError>>(result.getFieldErrors(),HttpStatus.BAD_REQUEST);
 		}
 		Project proj = projectService.saveOrUpdateProject(project);
 		return new ResponseEntity<Project>(proj, HttpStatus.CREATED);
