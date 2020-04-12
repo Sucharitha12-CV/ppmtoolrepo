@@ -27,8 +27,10 @@ public class ProjectController {
 	
 	@PostMapping("")
 	public ResponseEntity<?> createNewProject(@Valid @RequestBody Project project,BindingResult result){
+		
 		ResponseEntity<?> errorMap = mapValidationErrorService.mapValidationError(result);
 		if(errorMap!=null) return errorMap;
+		
 		Project proj = projectService.saveOrUpdateProject(project);
 		return new ResponseEntity<Project>(proj, HttpStatus.CREATED);
 	}
