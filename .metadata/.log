@@ -873,3 +873,15 @@ java.lang.OutOfMemoryError: Requested array size exceeds VM limit
 	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:711)
 	at org.eclipse.jdt.internal.core.search.processing.JobManager.run(JobManager.java:384)
 	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-15 10:41:18.442
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.uSYUKBNl
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-15 10:41:18.445
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.uSYUKBNl
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-15 10:41:18.447
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-15 10:41:18.450
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.uSYUKBNl => OK
