@@ -5,14 +5,17 @@ import React, { Component } from 'react'
 import Dashboard from './components/Dashboard';
 import Header from './components/layout/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import AddProject from './components/projects/AddProject';
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <Router>
         <Header/>
-        <Dashboard/>
-      </div>
+        <Route path="/dashboard" component={Dashboard}/>
+        <Route path="/addProject" component={AddProject}/>
+        </Router>
     )
   }
 }
