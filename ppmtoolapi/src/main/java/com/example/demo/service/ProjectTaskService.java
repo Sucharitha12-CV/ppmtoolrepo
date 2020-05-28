@@ -65,6 +65,7 @@ public class ProjectTaskService {
 		return projectTaskRepository.findByProjectIdentifierOrderByPriority(id);
 	}
 	
+	
 	public ProjectTask findPTByProjectSequence(String backlog_id, String pt_id) {
 		// make sure we are searching on an existing backlog
 		Backlog backlog = backlogRepository.findByProjectIdentifier(backlog_id);
@@ -83,6 +84,15 @@ public class ProjectTaskService {
 		
 		return projectTask;
 		
+	}
+	
+	public ProjectTask updateByProjectSequence(ProjectTask updatedTask, String backlog_id, String pt_id) {
+		//Find existing project task
+		ProjectTask projectTask = projectTaskRepository.findByProjectSequence(pt_id);
+		//Replace it with updated task
+		projectTask = updatedTask;
+		//Save projectTask
+		return projectTaskRepository.save(projectTask);
 	}
 
 }
